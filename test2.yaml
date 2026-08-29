@@ -2,16 +2,11 @@
 - name: Install HTTPD and VSFTPD on all hosts
   hosts: all
   become: true
+  import_playbook: testyaml.yaml
 
   tasks:
-    - name: Install httpd and vsftpd
+    - name: uninstall the package vsftpd
       ansible.builtin.package:
         name: vsftpd
-        state: present
-
-    - name: Enable and start vsftpd
-      ansible.builtin.service:
-        name: vsftpd
-        state: started
-        enabled: true
+        state: absent
 
