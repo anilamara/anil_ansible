@@ -1,0 +1,10 @@
+---
+- name: Install HTTPD and VSFTPD on all hosts
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Install httpd and vsftpd
+      ansible.builtin.package:
+        name: screen
+        state: present
