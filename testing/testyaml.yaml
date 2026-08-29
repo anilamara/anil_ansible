@@ -6,6 +6,6 @@
   tasks:
     - name: Install httpd and vsftpd
       ansible.builtin.package:
-        name: finger
+        name: vsftpd
         state: present
 
