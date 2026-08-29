@@ -7,4 +7,11 @@
     - name: Install httpd and vsftpd
       ansible.builtin.package:
         name: vsftpd
-        state: absent
+        state: present
+
+    - name: Enable and start vsftpd
+      ansible.builtin.service:
+        name: vsftpd
+        state: started
+        enabled: true
+
