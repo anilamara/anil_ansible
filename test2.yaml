@@ -1,8 +1,10 @@
 ---
+- name: Import the first test configuration
+  ansible.builtin.import_playbook: testyaml.yaml
+
 - name: Install HTTPD and VSFTPD on all hosts
   hosts: all
   become: true
-  import_playbook: testyaml.yaml
 
   tasks:
     - name: uninstall the package vsftpd
