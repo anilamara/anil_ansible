@@ -1,0 +1,17 @@
+---
+- name: Apply Baseline Configuration and Roles
+  hosts: all
+  become: true
+  roles:
+    - role: motd_banner
+      vars:
+        motd_environment: "Production Lab Cluster"
+
+  tasks:
+    - name: Run baseline package setup
+      ansible.builtin.import_role:
+        name: baseline_setup
+
+    - name: Display completion summary
+      ansible.builtin.debug:
+        msg: "All roles executed successfully on {{ inventory_hostname }}."

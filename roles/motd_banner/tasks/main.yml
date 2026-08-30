@@ -1,0 +1,12 @@
+---
+- name: Configure custom MOTD file
+  ansible.builtin.copy:
+    dest: /etc/motd
+    content: |
+      ======================================================
+      System: {{ inventory_hostname }}
+      Environment: {{ motd_environment }}
+      Managed By: {{ motd_managed_by }}
+      OS: {{ ansible_distribution }} {{ ansible_distribution_version }}
+      ======================================================
+    mode: '0644'

@@ -1,0 +1,11 @@
+---
+- name: Install required baseline packages
+  ansible.builtin.package:
+    name: "{{ required_packages }}"
+    state: present
+
+- name: Ensure chronyd service is enabled and started
+  ansible.builtin.service:
+    name: chronyd
+    state: started
+    enabled: true

@@ -1,0 +1,3 @@
+---
+motd_environment: "AAP Managed Lab"
+motd_managed_by: "Ansible Automation Platform"

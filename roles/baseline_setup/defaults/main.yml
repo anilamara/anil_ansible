@@ -1,0 +1,6 @@
+---
+required_packages:
+  - curl
+  - tar
+  - chrony
+  - util-linux
