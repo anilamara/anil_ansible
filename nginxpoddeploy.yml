@@ -1,0 +1,17 @@
+---
+- name: Deploy an Nginx pod to Kubernetes
+  hosts: localhost
+  tasks:
+    - name: Create a pod using the k8s collection module
+      kubernetes.core.k8s:
+        state: present
+        definition:
+          apiVersion: v1
+          kind: Pod
+          metadata:
+            name: nginx-test
+            namespace: default
+          spec:
+            containers:
+              - name: nginx
+                image: nginx:latest
